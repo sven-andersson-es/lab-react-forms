@@ -9,7 +9,7 @@ import studentsData from "./assets/students.json";
 function App() {
 	const [students, setStudents] = useState(studentsData);
 	const [fullName, setFullName] = useState("");
-	const [image, setImage] = useState("");
+	const [image, setImage] = useState("https://randomuser.me/api/portraits/lego/7.jpg");
 	const [phone, setPhone] = useState("");
 	const [email, setEmail] = useState("");
 	const [program, setProgram] = useState("");
@@ -30,7 +30,7 @@ function App() {
 	};
 
 	const handleSubmit = (e) => {
-    e.preventDefault();
+		e.preventDefault();
 		const newStudent = {
 			students,
 			fullName,
@@ -39,9 +39,17 @@ function App() {
 			email,
 			program,
 			graduationYear,
-			graduated
+			graduated,
 		};
-    addStudent(newStudent)
+		addStudent(newStudent);
+
+		setFullName("");
+		setImage("https://randomuser.me/api/portraits/lego/7.jpg");
+		setPhone("");
+		setEmail("");
+		setProgram("");
+		setGraduationYear(2023);
+		setGraduated(false);
 	};
 
 	return (
